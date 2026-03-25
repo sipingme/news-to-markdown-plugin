@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News to Markdown</title>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 头部 -->
+    <header class="header">
+      <h1>📝 News to Markdown</h1>
+      <p class="subtitle">提取网页内容并转换为 Markdown</p>
+    </header>
+
+    <!-- 状态区域 -->
+    <div class="status-section">
+      <div id="platformInfo" class="platform-info">
+        <span class="label">当前平台:</span>
+        <span id="platformName" class="value">检测中...</span>
+      </div>
+      <div id="urlInfo" class="url-info">
+        <span class="label">页面:</span>
+        <span id="currentUrl" class="value">-</span>
+      </div>
+    </div>
+
+    <!-- 操作按钮 -->
+    <div class="actions">
+      <button id="extractBtn" class="btn btn-primary" disabled>
+        <span class="icon">🔍</span>
+        提取内容
+      </button>
+    </div>
+
+    <!-- 进度提示 -->
+    <div id="progress" class="progress" style="display: none;">
+      <div class="spinner"></div>
+      <span id="progressText">正在提取内容...</span>
+    </div>
+
+    <!-- 错误提示 -->
+    <div id="error" class="error" style="display: none;">
+      <span class="icon">⚠️</span>
+      <span id="errorText"></span>
+    </div>
+
+    <!-- 元数据预览 -->
+    <div id="metadata" class="metadata" style="display: none;">
+      <h3>📋 文章信息</h3>
+      <div class="metadata-item">
+        <span class="label">标题:</span>
+        <span id="metaTitle" class="value">-</span>
+      </div>
+      <div class="metadata-item">
+        <span class="label">作者:</span>
+        <span id="metaAuthor" class="value">-</span>
+      </div>
+      <div class="metadata-item">
+        <span class="label">发布时间:</span>
+        <span id="metaTime" class="value">-</span>
+      </div>
+      <div class="metadata-item">
+        <span class="label">字数:</span>
+        <span id="metaLength" class="value">-</span>
+      </div>
+    </div>
+
+    <!-- Markdown 预览 -->
+    <div id="preview" class="preview" style="display: none;">
+      <div class="preview-header">
+        <h3>📄 Markdown 预览</h3>
+        <button id="copyBtn" class="btn btn-small">
+          <span class="icon">📋</span>
+          复制
+        </button>
+      </div>
+      <pre id="markdownContent" class="markdown-content"></pre>
+    </div>
+
+    <!-- 下载按钮 -->
+    <div id="downloadSection" class="download-section" style="display: none;">
+      <button id="downloadBtn" class="btn btn-success">
+        <span class="icon">💾</span>
+        下载为 .md 文件
+      </button>
+    </div>
+
+    <!-- 底部信息 -->
+    <footer class="footer">
+      <p>支持平台: 小红书、知乎、通用网页</p>
+      <p class="version">v1.0.0</p>
+    </footer>
+  </div>
+
+  <script src="sidebar.js"></script>
+</body>
+</html>

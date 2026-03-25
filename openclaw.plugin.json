@@ -1,0 +1,85 @@
+{
+  "name": "news-to-markdown-plugin",
+  "version": "1.0.0",
+  "description": "Extract content from websites (especially Xiaohongshu) and convert to Markdown format",
+  "author": "Ping Si <sipingme@gmail.com>",
+  "type": "browser-extension",
+  "category": "productivity",
+  "tags": [
+    "markdown",
+    "converter",
+    "xiaohongshu",
+    "zhihu",
+    "content-extraction",
+    "readability"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sipingme/news-to-markdown-plugin"
+  },
+  "homepage": "https://github.com/sipingme/news-to-markdown-plugin",
+  "license": "MIT",
+  "browser_extension": {
+    "manifest": "manifest.json",
+    "type": "chrome",
+    "manifest_version": 3,
+    "platforms": [
+      "chrome",
+      "edge",
+      "brave"
+    ]
+  },
+  "permissions": {
+    "activeTab": {
+      "reason": "Access current tab to extract content"
+    },
+    "storage": {
+      "reason": "Save user preferences and configuration"
+    },
+    "downloads": {
+      "reason": "Download extracted content as Markdown files"
+    },
+    "host_permissions": {
+      "xiaohongshu.com": "Extract content from Xiaohongshu notes",
+      "xhs.cn": "Extract content from Xiaohongshu short links",
+      "zhihu.com": "Extract content from Zhihu articles",
+      "zhuanlan.zhihu.com": "Extract content from Zhihu columns"
+    }
+  },
+  "features": [
+    "Extract content from Xiaohongshu (小红书)",
+    "Extract content from Zhihu (知乎)",
+    "Universal content extraction using Mozilla Readability",
+    "Convert HTML to Markdown with Turndown.js",
+    "Sidebar UI for better user experience",
+    "Download as .md files with frontmatter",
+    "Copy to clipboard",
+    "Real-time content preview"
+  ],
+  "dependencies": {
+    "readability": "Mozilla Readability.js",
+    "turndown": "Turndown.js 7.1.2"
+  },
+  "screenshots": [],
+  "documentation": {
+    "readme": "README.md",
+    "install": "INSTALL.md",
+    "clawhub": "CLAWHUB.md",
+    "checklist": "CHECKLIST.md"
+  },
+  "support": {
+    "email": "sipingme@gmail.com",
+    "issues": "https://github.com/sipingme/news-to-markdown-plugin/issues"
+  },
+  "related_tools": [
+    "news-to-markdown",
+    "news-to-markdown-skill",
+    "wechat-md-publisher-skill"
+  ],
+  "use_cases": [
+    "Extract Xiaohongshu notes that cannot be scraped by backend tools",
+    "Save web articles as Markdown for publishing to WeChat",
+    "Archive content from websites with anti-scraping protection",
+    "Convert any webpage to Markdown format"
+  ]
+}

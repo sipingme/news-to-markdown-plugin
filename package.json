@@ -1,0 +1,53 @@
+{
+  "name": "news-to-markdown-plugin",
+  "version": "1.0.0",
+  "description": "Browser extension to extract content from websites (especially Xiaohongshu) and convert to Markdown format",
+  "author": "Ping Si <sipingme@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sipingme/news-to-markdown-plugin.git"
+  },
+  "keywords": [
+    "markdown",
+    "converter",
+    "browser-extension",
+    "chrome-extension",
+    "xiaohongshu",
+    "zhihu",
+    "readability",
+    "content-extraction"
+  ],
+  "openclaw": {
+    "extensions": {
+      "browser": {
+        "manifest": "manifest.json",
+        "type": "chrome",
+        "manifest_version": 3,
+        "platforms": [
+          "chrome",
+          "edge",
+          "brave"
+        ]
+      }
+    }
+  },
+  "browser_extension": {
+    "manifest": "manifest.json",
+    "type": "chrome",
+    "platforms": [
+      "chrome",
+      "edge",
+      "brave"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"No tests yet\"",
+    "lint": "echo \"No linting configured yet\""
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
