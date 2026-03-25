@@ -3,6 +3,8 @@
  * News to Markdown Browser Extension Plugin
  */
 
+import { Type } from '@sinclair/typebox';
+
 export default {
   id: "news-to-markdown-plugin",
   name: "News to Markdown Plugin",
@@ -10,37 +12,31 @@ export default {
   description: "Extract content from websites (especially Xiaohongshu) and convert to Markdown format",
   
   /**
-   * Configuration schema
+   * Configuration schema - OpenClaw 2026 format with TypeBox
    */
   config: {
-    schema: {
-      type: 'object',
-      additionalProperties: false,
-      properties: {
-        enabled: {
-          type: 'boolean',
-          default: true,
-          description: 'Enable or disable the plugin'
-        },
-        autoDownload: {
-          type: 'boolean',
-          default: false,
-          description: 'Automatically download extracted content as .md file'
-        },
-        defaultPlatform: {
-          type: 'string',
-          enum: ['xiaohongshu', 'zhihu', 'generic'],
-          default: 'generic',
-          description: 'Default platform extractor to use'
-        },
-        includeFrontmatter: {
-          type: 'boolean',
-          default: true,
-          description: 'Include frontmatter metadata in generated Markdown'
-        }
-      },
-      required: []
-    }
+    schema: Type.Object({
+      enabled: Type.Optional(Type.Boolean({
+        default: true,
+        description: 'Enable or disable the plugin'
+      })),
+      autoDownload: Type.Optional(Type.Boolean({
+        default: false,
+        description: 'Automatically download extracted content as .md file'
+      })),
+      defaultPlatform: Type.Optional(Type.Union([
+        Type.Literal('xiaohongshu'),
+        Type.Literal('zhihu'),
+        Type.Literal('generic')
+      ], {
+        default: 'generic',
+        description: 'Default platform extractor to use'
+      })),
+      includeFrontmatter: Type.Optional(Type.Boolean({
+        default: true,
+        description: 'Include frontmatter metadata in generated Markdown'
+      }))
+    })
   },
   
   /**

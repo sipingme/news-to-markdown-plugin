@@ -27,6 +27,9 @@
         "entry": "./index.js"
       }
     ],
+    "compat": {
+      "pluginApi": "2026.1"
+    },
     "config": {
       "schema": {
         "type": "object",
@@ -48,7 +51,11 @@
             "type": "string",
             "title": "Default Platform",
             "description": "Default platform extractor to use",
-            "enum": ["xiaohongshu", "zhihu", "generic"],
+            "enum": [
+              "xiaohongshu",
+              "zhihu",
+              "generic"
+            ],
             "default": "generic"
           },
           "includeFrontmatter": {
@@ -71,8 +78,9 @@
       "brave"
     ]
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "@sinclair/typebox": "^0.34.48"
+  },
   "scripts": {
     "test": "echo \"No tests yet\"",
     "lint": "echo \"No linting configured yet\""
