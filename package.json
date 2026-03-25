@@ -22,17 +22,8 @@
   ],
   "openclaw": {
     "extensions": {
-      "browser": {
-        "manifest": "manifest.json",
-        "type": "chrome",
-        "entry": "background/background.js",
-        "manifest_version": 3,
-        "platforms": [
-          "chrome",
-          "edge",
-          "brave"
-        ]
-      }
+      "manifest": "manifest.json",
+      "type": "chrome"
     }
   },
   "browser_extension": {
