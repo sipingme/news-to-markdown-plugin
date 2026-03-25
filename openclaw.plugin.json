@@ -1,10 +1,11 @@
 {
-  "name": "news-to-markdown-plugin",
+  "id": "news-to-markdown-plugin",
+  "name": "News to Markdown Plugin",
   "version": "1.0.0",
   "description": "Extract content from websites (especially Xiaohongshu) and convert to Markdown format",
   "author": "Ping Si <sipingme@gmail.com>",
-  "type": "browser-extension",
-  "category": "productivity",
+  "type": "native",
+  "category": "tools",
   "tags": [
     "markdown",
     "converter",
