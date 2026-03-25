@@ -23,7 +23,39 @@
   "openclaw": {
     "extensions": [
       "./index.js"
-    ]
+    ],
+    "config": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enable Plugin",
+            "description": "Enable or disable the plugin",
+            "default": true
+          },
+          "autoDownload": {
+            "type": "boolean",
+            "title": "Auto Download",
+            "description": "Automatically download extracted content as .md file",
+            "default": false
+          },
+          "defaultPlatform": {
+            "type": "string",
+            "title": "Default Platform",
+            "description": "Default platform extractor to use",
+            "enum": ["xiaohongshu", "zhihu", "generic"],
+            "default": "generic"
+          },
+          "includeFrontmatter": {
+            "type": "boolean",
+            "title": "Include Frontmatter",
+            "description": "Include frontmatter metadata in generated Markdown",
+            "default": true
+          }
+        }
+      }
+    }
   },
   "browser_extension": {
     "manifest": "manifest.json",
