@@ -14,30 +14,34 @@ export default definePluginEntry({
   
   /**
    * Configuration schema - OpenClaw 2026 format with TypeBox
+   * Simplified to avoid complex type parsing issues
    */
   config: {
     schema: Type.Object({
-      enabled: Type.Optional(Type.Boolean({
+      enabled: Type.Boolean({ 
         default: true,
         description: 'Enable or disable the plugin'
-      })),
-      autoDownload: Type.Optional(Type.Boolean({
+      }),
+      autoDownload: Type.Boolean({ 
         default: false,
         description: 'Automatically download extracted content as .md file'
-      })),
-      defaultPlatform: Type.Optional(Type.Union([
-        Type.Literal('xiaohongshu'),
-        Type.Literal('zhihu'),
-        Type.Literal('generic')
-      ], {
+      }),
+      defaultPlatform: Type.String({ 
         default: 'generic',
-        description: 'Default platform extractor to use'
-      })),
-      includeFrontmatter: Type.Optional(Type.Boolean({
+        description: 'Default platform extractor to use (xiaohongshu, zhihu, or generic)'
+      }),
+      includeFrontmatter: Type.Boolean({ 
         default: true,
         description: 'Include frontmatter metadata in generated Markdown'
-      }))
-    })
+      })
+    }),
+    // Explicit default values for OpenClaw 2026 validator
+    default: {
+      enabled: true,
+      autoDownload: false,
+      defaultPlatform: 'generic',
+      includeFrontmatter: true
+    }
   },
   
   /**
