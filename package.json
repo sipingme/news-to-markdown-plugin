@@ -21,10 +21,9 @@
     "content-extraction"
   ],
   "openclaw": {
-    "extensions": {
-      "manifest": "manifest.json",
-      "type": "chrome"
-    }
+    "extensions": [
+      "./index.js"
+    ]
   },
   "browser_extension": {
     "manifest": "manifest.json",
