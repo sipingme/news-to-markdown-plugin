@@ -2,8 +2,6 @@
   "name": "news-to-markdown-plugin",
   "version": "1.0.0",
   "description": "Browser extension to extract content from websites (especially Xiaohongshu) and convert to Markdown format",
-  "main": "index.js",
-  "type": "module",
   "author": "Ping Si <sipingme@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -21,52 +19,9 @@
     "content-extraction"
   ],
   "openclaw": {
-    "extensions": [
-      {
-        "type": "code",
-        "entry": "./index.js"
-      }
-    ],
+    "plugin_type": "browser_extension",
     "compat": {
       "pluginApi": "2026.1"
-    },
-    "config": {
-      "schema": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "enabled": {
-            "type": "boolean",
-            "title": "Enable Plugin",
-            "description": "Enable or disable the plugin",
-            "default": true
-          },
-          "autoDownload": {
-            "type": "boolean",
-            "title": "Auto Download",
-            "description": "Automatically download extracted content as .md file",
-            "default": false
-          },
-          "defaultPlatform": {
-            "type": "string",
-            "title": "Default Platform",
-            "description": "Default platform extractor to use",
-            "enum": [
-              "xiaohongshu",
-              "zhihu",
-              "generic"
-            ],
-            "default": "generic"
-          },
-          "includeFrontmatter": {
-            "type": "boolean",
-            "title": "Include Frontmatter",
-            "description": "Include frontmatter metadata in generated Markdown",
-            "default": true
-          }
-        },
-        "required": []
-      }
     }
   },
   "browser_extension": {
@@ -76,7 +31,46 @@
       "chrome",
       "edge",
       "brave"
-    ]
+    ],
+    "config_schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "title": "News to Markdown Plugin Configuration",
+      "description": "Configuration options for the News to Markdown browser extension plugin",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "title": "Enable Plugin",
+          "description": "Enable or disable the plugin",
+          "default": true
+        },
+        "autoDownload": {
+          "type": "boolean",
+          "title": "Auto Download",
+          "description": "Automatically download extracted content as .md file",
+          "default": false
+        },
+        "defaultPlatform": {
+          "type": "string",
+          "title": "Default Platform",
+          "description": "Default platform extractor to use",
+          "enum": [
+            "xiaohongshu",
+            "zhihu",
+            "generic"
+          ],
+          "default": "generic"
+        },
+        "includeFrontmatter": {
+          "type": "boolean",
+          "title": "Include Frontmatter",
+          "description": "Include frontmatter metadata in generated Markdown",
+          "default": true
+        }
+      },
+      "required": []
+    }
   },
   "dependencies": {
     "@sinclair/typebox": "^0.34.48"
@@ -87,5 +81,8 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "canvas": "^3.2.2"
   }
 }
