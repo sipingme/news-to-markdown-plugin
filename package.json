@@ -22,11 +22,15 @@
   ],
   "openclaw": {
     "extensions": [
-      "./index.js"
+      {
+        "type": "code",
+        "entry": "./index.js"
+      }
     ],
     "config": {
       "schema": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "enabled": {
             "type": "boolean",
@@ -53,7 +57,8 @@
             "description": "Include frontmatter metadata in generated Markdown",
             "default": true
           }
-        }
+        },
+        "required": []
       }
     }
   },
