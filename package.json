@@ -2,6 +2,7 @@
   "name": "news-to-markdown-plugin",
   "version": "1.0.0",
   "description": "Browser extension to extract content from websites (especially Xiaohongshu) and convert to Markdown format",
+  "main": "background/background.js",
   "author": "Ping Si <sipingme@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -23,6 +24,7 @@
       "browser": {
         "manifest": "manifest.json",
         "type": "chrome",
+        "entry": "background/background.js",
         "manifest_version": 3,
         "platforms": [
           "chrome",
