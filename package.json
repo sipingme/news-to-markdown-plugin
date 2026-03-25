@@ -19,61 +19,15 @@
     "content-extraction"
   ],
   "openclaw": {
-    "plugin_type": "browser_extension",
-    "compat": {
-      "pluginApi": "2026.1"
-    }
-  },
-  "browser_extension": {
-    "manifest": "manifest.json",
-    "type": "chrome",
-    "platforms": [
-      "chrome",
-      "edge",
-      "brave"
-    ],
-    "config_schema": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      "type": "object",
-      "title": "News to Markdown Plugin Configuration",
-      "description": "Configuration options for the News to Markdown browser extension plugin",
-      "additionalProperties": false,
-      "properties": {
-        "enabled": {
-          "type": "boolean",
-          "title": "Enable Plugin",
-          "description": "Enable or disable the plugin",
-          "default": true
-        },
-        "autoDownload": {
-          "type": "boolean",
-          "title": "Auto Download",
-          "description": "Automatically download extracted content as .md file",
-          "default": false
-        },
-        "defaultPlatform": {
-          "type": "string",
-          "title": "Default Platform",
-          "description": "Default platform extractor to use",
-          "enum": [
-            "xiaohongshu",
-            "zhihu",
-            "generic"
-          ],
-          "default": "generic"
-        },
-        "includeFrontmatter": {
-          "type": "boolean",
-          "title": "Include Frontmatter",
-          "description": "Include frontmatter metadata in generated Markdown",
-          "default": true
-        }
-      },
-      "required": []
-    }
-  },
-  "dependencies": {
-    "@sinclair/typebox": "^0.34.48"
+    "pluginType": "browser_extension",
+    "browserExtension": {
+      "manifest": "manifest.json",
+      "type": "chrome",
+      "manifestVersion": 3,
+      "platforms": ["chrome", "edge", "brave"]
+    },
+    "configEntry": "index.js",
+    "metadata": "openclaw.plugin.json"
   },
   "scripts": {
     "test": "echo \"No tests yet\"",
@@ -81,8 +35,5 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  },
-  "devDependencies": {
-    "canvas": "^3.2.2"
   }
 }
