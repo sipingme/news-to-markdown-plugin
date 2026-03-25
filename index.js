@@ -10,6 +10,40 @@ export default {
   description: "Extract content from websites (especially Xiaohongshu) and convert to Markdown format",
   
   /**
+   * Configuration schema
+   */
+  config: {
+    schema: {
+      type: 'object',
+      additionalProperties: false,
+      properties: {
+        enabled: {
+          type: 'boolean',
+          default: true,
+          description: 'Enable or disable the plugin'
+        },
+        autoDownload: {
+          type: 'boolean',
+          default: false,
+          description: 'Automatically download extracted content as .md file'
+        },
+        defaultPlatform: {
+          type: 'string',
+          enum: ['xiaohongshu', 'zhihu', 'generic'],
+          default: 'generic',
+          description: 'Default platform extractor to use'
+        },
+        includeFrontmatter: {
+          type: 'boolean',
+          default: true,
+          description: 'Include frontmatter metadata in generated Markdown'
+        }
+      },
+      required: []
+    }
+  },
+  
+  /**
    * Register plugin with OpenClaw
    */
   register(api) {
