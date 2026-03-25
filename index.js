@@ -3,9 +3,10 @@
  * News to Markdown Browser Extension Plugin
  */
 
+import { definePluginEntry } from 'openclaw/plugin-sdk/plugin-entry';
 import { Type } from '@sinclair/typebox';
 
-export default {
+export default definePluginEntry({
   id: "news-to-markdown-plugin",
   name: "News to Markdown Plugin",
   version: "1.0.0",
@@ -79,4 +80,4 @@ export default {
     
     console.log('[news-to-markdown-plugin] Plugin registered successfully');
   }
-};
+});
